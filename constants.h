@@ -22,7 +22,7 @@ const int S = 10;
 // Percentage of alive cells at initialization
 const int T = 15;
 
-// Constants for currC and currY ints in fromFileToLife. Got sick of changing them manually all the time
+// Constants for currC and currY ints in fromFileToLife. Got sick of changing them manually all the time. Change these to change where the pattern file is drawn on screen.
 const int xCurr = 0;
 const int yCurr = 0;
 
