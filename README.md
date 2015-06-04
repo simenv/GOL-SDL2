@@ -20,14 +20,14 @@ to experiment with settings.
 RLE reader (fromFileToLife()):
 The reader supposedly reads from the RLE file and makes the appropriate cells dead or alive.
 I doesn't work very well. I can get a linepuffer to function, but thats only because I modified the content
-inside the file a bit (read the encoding rules (<a href="http://www.conwaylife.com/wiki/Run_Length_Encoded" target="_blank">Here</a>)) for the RLE format and you might see what I modified 
+inside the file a bit (read the encoding rules (<a href="http://www.conwaylife.com/wiki/Run_Length_Encoded" target="_blank">Here</a>) for the RLE format and you might see what I modified 
 in the linepuffer file below)
 
 Here is the text inside the RLE file for the linepuffer:
 
-#N Line-puffer
-#O Tim Coe
-#C A c/2 orthogonal line-puffer of width 76
+\#N Line-puffer
+\#O Tim Coe
+\#C A c/2 orthogonal line-puffer of width 76
 x = 156, y = 32, rule = b3/s23
 34b3o27b3o13b3o27b3o43b$33b1o3b1o25b1o3b1o11b1o3b1o25b1o3b1o42b$32b2o4b1o11b1o
 11b1o4b2o9b2o4b1o11b1o11b1o4b2o41b$31b1o1b1o1b2o1b2o3b4o1b2o1b2o1b4o3b2o1b2o1b1o1b1o7b1o
