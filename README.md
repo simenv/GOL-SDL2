@@ -19,7 +19,7 @@ to experiment with settings.
 
 RLE reader (fromFileToLife()):
 The reader supposedly reads from the RLE file and makes the appropriate cells dead or alive.
-I doesn't work very well. I can get a linepuffer to function, but thats only because I modified the content
+It doesn't work very well. I can get a linepuffer to function, but thats only because I modified the content
 inside the file a bit (read the encoding rules (<a href="http://www.conwaylife.com/wiki/Run_Length_Encoded" target="_blank">Here</a>) for the RLE format and you might see what I modified 
 in the linepuffer file I uploaded)
 Place linepuffer.rle inside the directory where the programs exe file exists. When you run the program and the window
