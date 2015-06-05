@@ -1,3 +1,17 @@
+/*
+ List of thing to do:
+ - Fix rle reader
+ - Add buttons (Pause/unpause, reset&&pause, drawing mode,size of brush?, load pattern file)
+ - Add fields for modification of constants (fps, ruleset, )
+ - Make constants NOT be constants anymore
+ - Add fullscreen option
+ - Add popup window where user can choose pattern file
+ - Add color selector (alternatively add color pallettes which user can choose)
+ 
+ 
+ */
+
+
 //Using SDL, SDL_image, standard IO, math, strings random and GOL helper functions
 #include <SDL2_image/SDL_image.h>
 #include <SDL2/SDL.h>
@@ -259,6 +273,27 @@ int main(int argc, char* args[])
                     {
                         quit = true;
                     }
+                    // To pause and reset
+                    if( e.type == SDL_KEYDOWN )
+                    {
+                        if(e.key.keysym.sym == SDLK_UP)
+                        {
+                            for(int i = 0; i < N*screenRatio; i++)
+                            {
+                                for(int j = 0; j < N; j++)
+                                {
+                                    cell[i][j] = 0;
+                                    tempCell[i][j] = 0;
+                                }
+                            }
+                            wait = true;
+                        }
+                        // To pause
+                        if(e.key.keysym.sym == SDLK_RIGHT)
+                        {
+                            wait = true;
+                        }
+                    }
                 }
 
                 //Clear screen
@@ -297,7 +332,7 @@ int main(int argc, char* args[])
                             if (cell[nx-1][ny-1] == 1) cellCount[i][j]++;
                             
                             // Kills living cells if cellCount is more than 3 or less than 2
-                            if (cellCount[i][j] > 3 || cellCount[i][j] < 2)
+                            if (cellCount[i][j] > overPop || cellCount[i][j] < underPop)
                             {
                                 tempCell[i][j] = 0;
                             }
@@ -319,7 +354,7 @@ int main(int argc, char* args[])
                             if (cell[nx-1][ny-1] == 1) cellCount[i][j]++;
                             
                             // Birth of living cells
-                            if (cellCount[i][j] == 3)
+                            if (cellCount[i][j] == birth)
                             {
                                 tempCell[i][j] = 1;
                             }
